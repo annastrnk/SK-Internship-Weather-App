@@ -1,4 +1,4 @@
-@import "../../style/variables.module.scss";
+@use "../../style/variables.module.scss";
 
 .footer-info{
     padding: 38px 0;
@@ -13,5 +13,5 @@ line-height: 24px;
 }
 
 .section-footer{
-    background-color: $light-grey;
+    background-color: var(--light-grey);
 }

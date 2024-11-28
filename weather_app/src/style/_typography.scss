@@ -1,23 +1,5 @@
+// @use './variables.module.scss';
 
-
-
-:root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    margin: 0 auto;
-    line-height: 1.5;
-    font-weight: 400;
-  
-    // color: #565353;
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  * {
-  margin: 0 auto;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 .container{
   width: 1000px;
@@ -35,5 +17,6 @@
   font-weight: 500;
   line-height: 38px;
   text-align: center;
+  // color: $main-black;
   
   }
