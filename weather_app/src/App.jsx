@@ -1,23 +1,20 @@
+import "./App.css";
+import { useState } from "react";
+import Faq from "./components/Faq/Faq";
+import Footer from "./components/Footer/Footer";
+import WeatherDashboard from "./components/WeatherDashboard/WeatherDashboard";
+import {ThemeContext} from "./context/themeContext"
 
-import './App.css'
-import Faq from './components/Faq/Faq'
-import Footer from './components/Footer/Footer'
-import HeroSection from './components/HeroSection/HeroSection'
-import PopCity from './components/PopCity/PopCity'
 
 function App() {
-
-
-
-  
+  const [theme, setTheme] = useState("light");
   return (
-    <>
-    <HeroSection/>
-    <PopCity/>
-    <Faq/>
-    <Footer/>
-    </>
-  )
+    <ThemeContext.Provider value={{theme,setTheme}}>
+      <WeatherDashboard />
+      <Faq />
+      <Footer />
+    </ThemeContext.Provider>
+  );
 }
 
-export default App
+export default App;

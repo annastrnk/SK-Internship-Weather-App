@@ -1,22 +1,29 @@
-// @use './variables.module.scss';
 
-
-.container{
-  width: 1000px;
-  margin: 0 auto;
+a {
+  text-decoration: inherit;
+  color: inherit;
 }
 
-  a {
-    font-weight: 500;
-    text-decoration: inherit;
-    color: inherit;
-  }
-  
-.title{
-  font-size: 32px;
+.title {
+  font-size: 28px;
   font-weight: 500;
-  line-height: 38px;
+  line-height: 34px;
   text-align: center;
-  // color: $main-black;
-  
+}
+
+.normal-font {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+h3 {
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 32px;
+    line-height: 38px;
   }
+}

@@ -1,15 +1,11 @@
-import "./Footer.scss"
+import "./Footer.scss";
 
 export default function Footer() {
+  const getYear = new Date().getFullYear();
 
-    const getYear =new Date().getFullYear()
-  
-    return(
-        <div className="section-footer">
-
-          <p className="footer-info ">Your Name {getYear}</p>
-
-        </div>
-    )
-    
+  return (
+    <section className="footer-block">
+      <p className="footer-info normal-font ">Your Name {getYear}</p>
+    </section>
+  );
 }

@@ -1,6 +1,5 @@
-export const farenheittoCelcius=(temp)=>{
-    return (5/9)*Number(temp-32);
-}
-export const celciusToFarenheit = (temp)=>{
-    return ((9/5)*Number(temp)+32).toFixed(2);
+export default function farenheittoCelcius(temp) {
+  const celsiusTemp = Math.round(temp - 273.15);
+  const sign = celsiusTemp > 0 ? "+" : ""; 
+  return `${sign}${celsiusTemp}`;
 }

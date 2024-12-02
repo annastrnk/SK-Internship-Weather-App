@@ -1,22 +1,39 @@
-@use '../../style/variables.module.scss';
+.faq-block {
+  padding: 70px 0 120px;
 
-.accordion-title,
-.accordion-content{
- background-color: var(--light-grey);
- font-size: 16px;
-font-weight: 400;
-line-height: 24px;
-text-align: left;
-border-radius: 30px;
-padding: 20px;
+  .accordion {
+    margin-top: 35px;
+
+    &-header {
+      background-color: var(--light-grey);
+      border-radius: 30px;
+      margin-bottom: 5px;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--main-blue);
+      }
+    }
+
+    &-content {
+      padding: 15px 20px;
+      border-radius: 30px;
+      background-color: var(--light-grey);
+      margin-bottom: 24px;
+    }
+
+    &-icon {
+      transition: transform 0.3s ease;
+      width: 16px;
+      height: 16px;
+
+      &.rotate {
+        transform: rotate(180deg);
+      }
+    }
+  }
 }
-
-.accordion-title{
-    
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-
