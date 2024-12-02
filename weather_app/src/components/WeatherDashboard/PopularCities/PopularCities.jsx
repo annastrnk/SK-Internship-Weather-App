@@ -16,7 +16,7 @@ export default function PopularCities({ onSelectCity }) {
               onClick={() => onSelectCity(item.text)}
             >
               <img className="city-img" src={item.src} alt={item.alt}></img>
-              <button className="city-text normal-font">{item.text}</button>
+              <button className="city-text main-font">{item.text}</button>
             </div>
           ))}
         </div>

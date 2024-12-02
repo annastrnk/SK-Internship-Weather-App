@@ -3,7 +3,9 @@
 
   .accordion {
     margin-top: 35px;
-
+  &-item{
+    margin-bottom: 20px;
+  }
     &-header {
       background-color: var(--light-grey);
       border-radius: 30px;

@@ -5,7 +5,7 @@ export default function CityDropdown({ cities, onSelectCity }) {
         {cities.map((cityItem, index) => (
           <li
             key={index}
-            className="cities-link normal-font"
+            className="cities-link main-font"
             onClick={() => onSelectCity(cityItem.name)}
           >
             {cityItem.name}

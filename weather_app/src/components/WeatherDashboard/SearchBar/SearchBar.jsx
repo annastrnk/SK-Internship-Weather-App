@@ -16,8 +16,8 @@ export default function SearchBar({ city, onCityChange, onSearch }) {
     <div className="search-bar">
       <input
         type="text"
-        className="input-search normal-font"
-        placeholder="Enter city name"
+        className="input-search main-font"
+        placeholder="Start typing to search..."
         value={city}
         onChange={(e) => onCityChange(e.target.value)}
         onKeyDown={handleKeyDown}

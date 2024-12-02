@@ -6,15 +6,13 @@ import {
   handleCitySearch,
   getWeatherForCity,
 } from "../../helpers/weatherLogic";
-import {fetchCityByCoordinates} from '../../helpers/api.js'
+import { fetchCityByGeolocation } from "../../helpers/fetchCityByGeolocation.js";
 import "./WeatherDashboard.scss";
 import dayImage from "../../../public/images/day.png";
 import nightImage from "../../../public/images/night.png";
 import { useState, useRef, useEffect } from "react";
-import { useContext } from "react"
+import { useContext } from "react";
 import { ThemeContext } from "../../context/themeContext";
-
-
 
 export default function WeatherDashboard() {
   const [city, setCity] = useState("");
@@ -43,37 +41,10 @@ export default function WeatherDashboard() {
     } else {
       setTheme("day");
     }
+    fetchCityByGeolocation(handleCitySelect);
+  }, [setTheme]);
 
-
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        async (position) => {
-          const { latitude, longitude } = position.coords;
-          try {
-            const data = await fetchCityByCoordinates(latitude, longitude);
-            if (data && data.name) {
-              handleCitySelect(data.name);
-            } else {
-              handleCitySelect("Kyiv");
-            }
-          } catch (error) {
-            console.error("Error fetching city by coordinates: ", error);
-            handleCitySelect("Kyiv");
-          }
-        },
-        (error) => {
-          console.error("Error getting location: ", error);
-       
-          handleCitySelect("Kyiv");
-        }
-      );
-    } else {
-    
-      handleCitySelect("Kyiv");
-    }
-  }, []);
-
-
+ 
 
   useEffect(() => {
     if (weather) {
@@ -84,7 +55,9 @@ export default function WeatherDashboard() {
   return (
     <>
       <header
-        className={`weather-dashboard ${theme === "night" ? "night-theme" : "day-theme"}`}
+        className={`weather-dashboard ${
+          theme === "night" ? "night-theme" : "day-theme"
+        }`}
         style={{
           backgroundImage: `url(${theme === "night" ? nightImage : dayImage})
           `,
@@ -103,9 +76,11 @@ export default function WeatherDashboard() {
               <CityDropdown cities={cities} onSelectCity={handleCitySelect} />
             )}
             {error && (
+              <div className="search-options">
               <ul className="cities-list">
                 <li className="error-link">{error}</li>
               </ul>
+              </div>
             )}
           </div>
           {weather && (
